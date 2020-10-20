@@ -55,7 +55,11 @@ public abstract class DinnerSet {
         }
 
         public String getReview(){
-            return "This is order of: " + DinnerSet.this.customer + ". It must be finished till: " + this.lastDate;
+            return new StringBuilder().append("This is order of: ")
+                    .append(DinnerSet.this.customer)
+                    .append(". It must be finished till: ")
+                    .append(this.lastDate).toString();
+
         }
 
 
