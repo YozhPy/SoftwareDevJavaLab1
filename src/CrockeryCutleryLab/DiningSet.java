@@ -6,9 +6,25 @@ public class DiningSet extends DinnerSet{
     LinkedHashMap<String, Integer> items_cost = new LinkedHashMap<String, Integer>();
     Material material;
     int plates_n, tureen_n, salad_n, sauce_n, jug_n;
-    public DiningSet(String title, LocalDate date, Customer customer,
-                     int p_n, int t_n, int s_n, int sauce_n, int jug_n, Material material) {
+    public DiningSet(String title, LocalDate date, int p_n, int t_n,
+                      int s_n, int sauce_n, int jug_n, Material material, Customer customer) {
         super(title, date, customer);
+        this.items_cost.put("Small plate", 30);
+        this.items_cost.put("Tureen", 36);
+        this.items_cost.put("Salad Bowl", 47);
+        this.items_cost.put("Sauce Bowl", 14);
+        this.items_cost.put("Jug", 44);
+        this.plates_n = p_n;
+        this.tureen_n = t_n;
+        this.salad_n = s_n;
+        this.sauce_n = sauce_n;
+        this.jug_n = jug_n;
+        this.material = material;
+    }
+
+    public DiningSet(String title, LocalDate date, int p_n, int t_n,
+                     int s_n, int sauce_n, int jug_n, Material material) {
+        super(title, date, new Customer("Anonim", "Anonim",true));
         this.items_cost.put("Small plate", 30);
         this.items_cost.put("Tureen", 36);
         this.items_cost.put("Salad Bowl", 47);
@@ -89,7 +105,7 @@ public class DiningSet extends DinnerSet{
 
     @Override
     public void print_set(){
-        System.out.println("We are glad to repeat your new wonderful DiningSet made of " + this.material);
+        System.out.println("We are glad to repeat your new wonderful DiningSet made of " + this.material.toString());
         Integer[] quantity  = {this.plates_n, this.tureen_n, this.salad_n,this.sauce_n,this.jug_n};
         int i = 0;
         System.out.println();
