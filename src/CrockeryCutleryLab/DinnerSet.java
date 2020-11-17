@@ -17,9 +17,10 @@ public abstract class DinnerSet {
     public DinnerSet(String title, LocalDate date){
         this.title = title;
         this.date = date;
-        this.customer = new Customer("Anonim", "Anonim");
+        this.customer = new Customer("Anonim", "Anonim", true);
         this.smallReview = new SmallReview();
     }
+
 
     public String getTitle() {
         return title;

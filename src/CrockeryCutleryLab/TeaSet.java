@@ -156,8 +156,8 @@ public class TeaSet extends DinnerSet{
     public int find_cost(){
         return this.kettles_n * this.tea_cost.get("Kettle") +
                 this.cup_n * this.tea_cost.get("Cup") +
-                this.butter_dish_n * this.tea_cost.get("Candy Bowl") +
-                this.candyBowl_n *  this.tea_cost.get("Butter Dish") +
+                this.butter_dish_n * this.tea_cost.get("Butter Dish") +
+                this.candyBowl_n *  this.tea_cost.get("Candy Bowl") +
                 this.creamer_n * this.tea_cost.get("Creamer");
     }
 

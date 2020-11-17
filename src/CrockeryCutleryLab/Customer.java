@@ -1,9 +1,10 @@
 package CrockeryCutleryLab;
 
+import javax.xml.namespace.QName;
+
 public class Customer implements Person{
     private String name;
     private String surname;
-    private String fullname;
     private Boolean isNew;
     public Customer(String name, String surname){
         this.name = name;
@@ -20,7 +21,7 @@ public class Customer implements Person{
     public Customer(String fullname){
         String[] words = fullname.split(" ", 2);
         this.name = words[0];
-        this.fullname = words[1];
+        this.surname = words[1];
         this.isNew = false;
     }
 
@@ -74,5 +75,6 @@ public class Customer implements Person{
         result = prime * result + this.surname.length();
         return result;
     }
+
 
 }

@@ -24,7 +24,7 @@ public class DiningSet extends DinnerSet{
 
     public DiningSet(String title, LocalDate date, int p_n, int t_n,
                      int s_n, int sauce_n, int jug_n, Material material) {
-        super(title, date, new Customer("Anonim", "Anonim",true));
+        super(title, date);
         this.items_cost.put("Small plate", 30);
         this.items_cost.put("Tureen", 36);
         this.items_cost.put("Salad Bowl", 47);
