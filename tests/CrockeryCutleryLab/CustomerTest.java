@@ -18,33 +18,33 @@ public class CustomerTest {
     }
 
     @Test
-    public void checkCustomerConstructorNameSurname() throws Exception{
+    public void constructorWithNameAndSurname_CheckValidness_String() throws Exception{
         assertEquals("First", person1.getName());
         assertEquals("Test", person1.getSurname());
     }
 
     @Test
-    public void checkCustomerConstructorNameSurnameNew() throws Exception{
+    public void constructorWithNameAndSurnameAndIsNew_CheckValidness_StringTrue() throws Exception{
         assertEquals("Second", person2.getName());
         assertEquals("Test", person2.getSurname());
         assertTrue(person2.getNew());
     }
 
     @Test
-    public void checkCustomerConstructorFull(){
+    public void constructorWithFullName_CheckValidness_String(){
         assertEquals("Third", person3.getName());
         assertEquals("Test Constructor", person3.getSurname());
     }
 
     @Test
-    public void checkCustomerConstructorFullNew() throws Exception{
+    public void constructorWithFullNameAndIsNew_CheckValidness_StringTrue() throws Exception{
         assertEquals("Last", person4.getName());
         assertEquals("Test Of Constructors", person4.getSurname());
         assertTrue(person4.getNew());
     }
 
     @Test
-    public void getFullNameAndToString() throws Exception{
+    public void toString_CheckValidness_String() throws Exception{
         assertEquals("First Test ", person1.toString());
         assertEquals("Second Test ", person2.toString());
         assertEquals("Third Test Constructor ", person3.toString());
@@ -52,7 +52,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void testHashCode() {
+    public void hashCode_checkValidness_Int() {
         final int prime = 31;
         assertEquals(prime * ( prime +person1.getName().length()) + person1.getSurname().length(), person1.hashCode());
         assertEquals(prime * ( prime +person2.getName().length()) + person2.getSurname().length(), person2.hashCode());
