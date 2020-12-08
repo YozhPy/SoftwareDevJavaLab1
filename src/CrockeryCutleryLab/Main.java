@@ -2,16 +2,48 @@ package CrockeryCutleryLab;
 import java.time.LocalDate;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
 public class Main {
 
     public static void main(String[] args){
-        SetsList first = fillSetList();
-        orderConfirmation(first);
-        SetsList second = fillSetList();
 
-       // SetsList second = fillSetListSecond();
-        //orderConfirmation(second);
-       // smallReviewsOfAllOrders(second);
+        SetsList functional_set = fillFunctionalList();
+        System.out.println(functional_set.findAllPlasticMoney());
+
+        functional_set.findMaxPrice().get().print_set();
+        System.out.println(functional_set.findAveragePrice());
+        System.out.println(functional_set.getPlasticOrders());
+        System.out.println(functional_set.getTheMostCommonTeaSetMaterial());
+
+    }
+
+    public static SetsList fillFunctionalList(){
+        SetsList firstList = new SetsList("This is favourite client! Yohouu");
+        Customer bestCustomer = new Customer("Yegor", "Nikishenko", true);
+        Customer customer = new Customer("Yegor", "Nikishenko", true);
+        if(bestCustomer.equals(customer)){
+            System.out.println("Equals is working");
+        }
+        if(customer.hashCode() == bestCustomer.hashCode()){
+            System.out.println("Hello, you are our BEST CUSTOMER! WE LOVE YOU");
+        }
+        firstList.addOrder(new DiningSet("Medium DiningSet", LocalDate.now(),
+                1, 2, 3, 4, 5, Material.Glass, customer));
+        firstList.addOrder(new DiningSet("Small DiningSet", LocalDate.now(),
+                0, 1, 2, 3, 4, Material.Glass, customer));
+        firstList.addOrder(new TeaSet("Small TeaSet", LocalDate.now(),
+                -3, 6, 1, 3, 2, Material.Porcelain, customer));
+        firstList.addOrder(new TeaSet("Small TeaSet", LocalDate.now(),
+                -3, 6, 1, 3, 2, Material.Porcelain, customer));
+        firstList.addOrder(new TeaSet("Small TeaSet", LocalDate.now(),
+                -3, 6, 1, 3, 2, Material.Plastic, customer));
+        firstList.addOrder(new TeaSet("Small TeaSet", LocalDate.now(),
+                -3, 598, 336, 3, 2, Material.Plastic, customer));
+        firstList.addOrder(new TeaSet("Small TeaSet", LocalDate.now(),
+                -3, 598, 336, 3, 2, Material.Plastic, customer));
+        return firstList;
     }
 
 
@@ -49,6 +81,8 @@ public class Main {
         }
         return firstList;
     }
+
+
 
     public static void orderConfirmation(SetsList setslist) {
         System.out.println(setslist.getOrders().get(0).customer.toString() + ", we are happy to make so wonderful Set, but let's confirm this order!");
