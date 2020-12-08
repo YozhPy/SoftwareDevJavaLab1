@@ -39,8 +39,8 @@ public abstract class DinnerSet {
 
 
     abstract void print_set();
-
-
+    abstract Material getMaterial();
+    abstract int find_cost();
     public Customer getCustomer() {
         return customer;
     }
